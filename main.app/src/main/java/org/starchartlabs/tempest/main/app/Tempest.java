@@ -8,8 +8,11 @@ package org.starchartlabs.tempest.main.app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Import;
+import org.starchartlabs.tempest.main.app.server.config.MainAppServerConfiguration;
 
 @SpringBootApplication
+@Import({ MainAppServerConfiguration.class })
 public class Tempest {
 
     public static void main(String[] args) {
