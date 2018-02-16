@@ -10,9 +10,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 import org.starchartlabs.tempest.main.app.server.config.MainAppServerConfiguration;
+import org.starchartlabs.tempest.main.app.server.config.WebSecurityConfiguration;
 
 @SpringBootApplication
-@Import({ MainAppServerConfiguration.class })
+@Import({ WebSecurityConfiguration.class,
+    MainAppServerConfiguration.class })
 public class Tempest {
 
     public static void main(String[] args) {
