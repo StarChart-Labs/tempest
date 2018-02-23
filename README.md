@@ -14,4 +14,4 @@ security:
             clientSecret: <Google Client Secret>
 ```
 
-The client ID/secret can be generated as per the firs steps of [these instructions](http://dba-presents.com/index.php/jvm/java/100-getting-started-with-google-sign-in-in-spring-boot-app)
+The client ID/secret can be generated as per the first steps of [these instructions](http://dba-presents.com/index.php/jvm/java/100-getting-started-with-google-sign-in-in-spring-boot-app)
