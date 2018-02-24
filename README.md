@@ -1,5 +1,7 @@
 # Tempest
 
+[![Travis CI](https://img.shields.io/travis/StarChart-Labs/tempest.svg?branch=master)](https://travis-ci.org/StarChart-Labs/tempest)
+
 Tempest is a web application for brainstorming new ideas with a group - allowing proposal, editing, acceptance, and rejection of aspects of any proposal
 
 ## Running
