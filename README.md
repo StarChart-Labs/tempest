@@ -1,6 +1,6 @@
 # Tempest
 
-[![Travis CI](https://img.shields.io/travis/StarChart-Labs/tempest.svg?branch=master)](https://travis-ci.org/StarChart-Labs/tempest)
+[![Travis CI](https://img.shields.io/travis/StarChart-Labs/tempest.svg?branch=master)](https://travis-ci.org/StarChart-Labs/tempest) [![Black Duck Security Risk](https://copilot.blackducksoftware.com/github/repos/StarChart-Labs/tempest/branches/master/badge-risk.svg)](https://copilot.blackducksoftware.com/github/repos/StarChart-Labs/tempest/branches/master) 
 
 Tempest is a web application for brainstorming new ideas with a group - allowing proposal, editing, acceptance, and rejection of aspects of any proposal
 
