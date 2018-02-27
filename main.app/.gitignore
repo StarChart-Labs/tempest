@@ -4,3 +4,4 @@
 /bin/
 /build/
 /src/main/resources/overrides.yml
+/test-output/
