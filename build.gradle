@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'com.netflix.nebula', name: 'nebula-dependency-recommender', version: '5.1.0'
+        classpath group: 'com.netflix.nebula', name: 'nebula-publishing-plugin', version: '5.1.0'
         classpath group: 'org.starchartlabs.flare', name: 'flare-operations-plugins', version: '0.1.0'
     }
 }
@@ -15,11 +16,12 @@ allprojects{
     apply plugin: 'eclipse'
     apply plugin: 'jacoco'
     apply plugin: 'nebula.dependency-recommender'
+    apply plugin: 'nebula.maven-resolved-dependencies'
     apply plugin: 'org.starchartlabs.flare.dependency-insight'
 
     dependencyRecommendations {
-        dependencyLock file: file("${rootDir}/dependencies.lock")
-    }
+        propertiesFile file: file("${rootDir}/dependencies.properties")
+	}
 
     group = 'org.starchartlabs.tempest'
 
