@@ -69,18 +69,13 @@ public class RequestPagingArgumentResolver implements HandlerMethodArgumentResol
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer,
             NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
-        String pageParameter = parameter.getParameterAnnotation(RequestPaging.class).pageName();
-        String perPageParameter = parameter.getParameterAnnotation(RequestPaging.class).perPageName();
-        String sortParameter = parameter.getParameterAnnotation(RequestPaging.class).sortName();
+        RequestPaging requestPaging = parameter.getParameterAnnotation(RequestPaging.class);
 
-        String defaultPage = parameter.getParameterAnnotation(RequestPaging.class).defaultPage();
-        String defaultPerPage = parameter.getParameterAnnotation(RequestPaging.class).defaultPerPage();
-        String defaultSort = parameter.getParameterAnnotation(RequestPaging.class).defaultSort();
-
-        Integer page = getInteger(pageParameter, defaultPage, webRequest, parameter);
-        Integer perPage = getInteger(perPageParameter, defaultPerPage, webRequest, parameter);
-        String sort = Optional.ofNullable(webRequest.getParameter(sortParameter))
-                .orElse(defaultSort);
+        Integer page = getInteger(requestPaging.pageName(), requestPaging.defaultPage(), webRequest, parameter);
+        Integer perPage = getInteger(requestPaging.perPageName(), requestPaging.defaultPerPage(), webRequest,
+                parameter);
+        String sort = Optional.ofNullable(webRequest.getParameter(requestPaging.sortName()))
+                .orElse(requestPaging.defaultSort());
 
         return new PageRequest(page, perPage, sort);
     }
