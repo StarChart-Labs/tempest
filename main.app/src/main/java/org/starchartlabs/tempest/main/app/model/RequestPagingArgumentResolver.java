@@ -21,7 +21,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 /**
  * Implementation of {@link HandlerMethodArgumentResolver} which handles spring MVC {@link PageRequest} input parameters
- * annotated with {@ RequestPaging}
+ * annotated with {@link RequestPaging}
  *
  * <p>
  * Utilizes annotation values to determine the query parameters to read paging values from, and to determine default
@@ -34,7 +34,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
  * public class Example implements WebMvcConfigurer {
  *
  *     &#64;Override
- *     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+ *     public void addArgumentResolvers(List&lt;HandlerMethodArgumentResolver&gt; argumentResolvers) {
  *         argumentResolvers.add(new RequestPagingArgumentResolver());
  *     }
  *
@@ -48,7 +48,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
  * public class Example extends WebMvcConfigurerAdapter {
  *
  *     &#64;Override
- *     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+ *     public void addArgumentResolvers(List&lt;HandlerMethodArgumentResolver&gt; argumentResolvers) {
  *         argumentResolvers.add(new RequestPagingArgumentResolver());
  *     }
  *
