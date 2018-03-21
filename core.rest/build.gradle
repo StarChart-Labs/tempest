@@ -1,0 +1,15 @@
+//Dependency versions managed in $rootDir/dependencies.lock
+dependencies {
+	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
+	compile group: 'com.google.code.findbugs', name: 'jsr305'
+	compile group: 'com.google.guava', name: 'guava'
+	compile group: 'org.slf4j', name: 'slf4j-api'
+	compile group: 'org.springframework', name: 'spring-web'
+    
+    testCompile group: 'org.mockito', name: 'mockito-core'
+    testCompile group: 'org.springframework', name: 'spring-test'
+    testCompile group: 'org.testng', name: 'testng'
+    
+    testRuntime group: 'javax.servlet', name: 'javax.servlet-api'
+    testRuntime group: 'org.springframework', name: 'spring-webmvc'
+}

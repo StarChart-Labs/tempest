@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.starchartlabs.tempest.main.app.model;
+package org.starchartlabs.tempest.core.rest.model;
 
 import java.util.Objects;
 

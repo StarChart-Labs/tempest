@@ -8,10 +8,10 @@
  * Contributors:
  *    romeara - initial API and implementation and/or initial documentation
  */
-package org.starchartlabs.tempest.test.main.app.model;
+package org.starchartlabs.tempest.test.core.rest.model;
 
-import org.starchartlabs.tempest.main.app.model.InvalidPagingArgumentException;
-import org.starchartlabs.tempest.main.app.model.PageRequest;
+import org.starchartlabs.tempest.core.rest.model.InvalidPagingArgumentException;
+import org.starchartlabs.tempest.core.rest.model.PageRequest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

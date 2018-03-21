@@ -8,7 +8,7 @@
  * Contributors:
  *    romeara - initial API and implementation and/or initial documentation
  */
-package org.starchartlabs.tempest.test.main.app.model;
+package org.starchartlabs.tempest.test.core.rest.model;
 
 import java.util.Objects;
 
@@ -28,9 +28,9 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.starchartlabs.tempest.main.app.model.PageRequest;
-import org.starchartlabs.tempest.main.app.model.RequestPaging;
-import org.starchartlabs.tempest.main.app.model.RequestPagingArgumentResolver;
+import org.starchartlabs.tempest.core.rest.model.PageRequest;
+import org.starchartlabs.tempest.core.rest.model.RequestPaging;
+import org.starchartlabs.tempest.core.rest.model.RequestPagingArgumentResolver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;

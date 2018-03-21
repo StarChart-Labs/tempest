@@ -12,15 +12,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.starchartlabs.tempest.main.app.model.RequestPagingArgumentResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.starchartlabs.tempest.core.rest.model.RequestPagingArgumentResolver;
 import org.starchartlabs.tempest.main.app.server.config.MainAppServerConfiguration;
 import org.starchartlabs.tempest.main.app.server.config.WebSecurityConfiguration;
 
 @SpringBootApplication
 @Import({ WebSecurityConfiguration.class,
     MainAppServerConfiguration.class })
-public class Tempest extends WebMvcConfigurerAdapter {
+public class Tempest implements WebMvcConfigurer {
 
     public static void main(String[] args) {
         SpringApplication.run(Tempest.class, args);
