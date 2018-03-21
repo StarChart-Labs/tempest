@@ -1,1 +1,2 @@
 include 'main.app'
+include 'core.rest'

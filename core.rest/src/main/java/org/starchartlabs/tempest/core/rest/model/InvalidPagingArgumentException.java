@@ -8,7 +8,7 @@
  * Contributors:
  *    romeara - initial API and implementation and/or initial documentation
  */
-package org.starchartlabs.tempest.main.app.model;
+package org.starchartlabs.tempest.core.rest.model;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
