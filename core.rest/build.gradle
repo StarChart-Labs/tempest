@@ -6,6 +6,7 @@ dependencies {
 	compile group: 'org.slf4j', name: 'slf4j-api'
 	compile group: 'org.springframework', name: 'spring-web'
     
+    testCompile group: 'com.google.code.gson', name: 'gson'
     testCompile group: 'org.mockito', name: 'mockito-core'
     testCompile group: 'org.springframework', name: 'spring-test'
     testCompile group: 'org.testng', name: 'testng'
