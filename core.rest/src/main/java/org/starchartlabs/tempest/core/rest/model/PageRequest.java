@@ -19,7 +19,10 @@ import java.util.Objects;
 
 import javax.annotation.Nullable;
 
+import org.springframework.web.util.UriComponentsBuilder;
+
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 
 /**
  * Represents query parameters provided on a web resource that supports bounding of a variable number of available
@@ -93,6 +96,53 @@ public class PageRequest {
      */
     public String getSort() {
         return sort;
+    }
+
+    /**
+     * Generates a page request using the same sorting and per-page parameters as this request for a specified page
+     * number
+     *
+     * @param pageNumber
+     *            The index of the page to generate a request representation for (0 - indexed)
+     * @return A page request using the same sorting and per-page parameters as this request, for the specified page
+     *         number
+     * @since 0.1.0
+     */
+    public PageRequest getForPageNumber(int pageNumber) {
+        Preconditions.checkArgument(pageNumber >= 0, "Cannot request a negative page");
+
+        return new PageRequest(pageNumber, getPerPage(), getSort());
+    }
+
+    /**
+     * Adds the page request parameters to a string URI representation as query parameters
+     *
+     * @param baseUrl
+     *            Base URI to construct a web address from
+     * @return The URI builder initialized with provided URI string and paging parameters
+     * @since 0.1.0
+     */
+    public UriComponentsBuilder applyUrlQuery(String baseUrl) {
+        Objects.requireNonNull(baseUrl);
+
+        return applyUrlQuery(UriComponentsBuilder.fromUriString(baseUrl));
+    }
+
+    /**
+     * Adds the page request parameters to a URI builder as query parameters
+     *
+     * @param builder
+     *            URI builder being used to construct a web address
+     * @return The provided URI builder with paging parameters
+     * @since 0.1.0
+     */
+    public UriComponentsBuilder applyUrlQuery(UriComponentsBuilder builder) {
+        Objects.requireNonNull(builder);
+
+        return builder
+                .queryParam("page", getPageNumber())
+                .queryParam("per_page", getPerPage())
+                .queryParam("sort", getSort());
     }
 
     @Override

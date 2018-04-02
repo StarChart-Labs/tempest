@@ -10,6 +10,9 @@
  */
 package org.starchartlabs.tempest.test.core.rest.model;
 
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.util.UriComponents;
+import org.springframework.web.util.UriComponentsBuilder;
 import org.starchartlabs.tempest.core.rest.model.InvalidPagingArgumentException;
 import org.starchartlabs.tempest.core.rest.model.PageRequest;
 import org.testng.Assert;
@@ -45,6 +48,74 @@ public class PageRequestTest {
     @Test(expectedExceptions = InvalidPagingArgumentException.class)
     public void constructEmptySort() throws Exception {
         new PageRequest(0, 10, " ");
+    }
+
+    @Test(expectedExceptions = IllegalArgumentException.class)
+    public void getForPageNumberNegativePage() throws Exception {
+        PageRequest request = new PageRequest(0, 10, "sort asc");
+
+        request.getForPageNumber(-1);
+    }
+
+    @Test
+    public void getForPageNumber() throws Exception {
+        PageRequest request = new PageRequest(0, 10, "sort asc");
+
+        PageRequest result = request.getForPageNumber(100);
+
+        Assert.assertEquals(result.getPageNumber().intValue(), 100);
+        Assert.assertEquals(result.getPerPage().intValue(), 10);
+        Assert.assertEquals(result.getSort(), "sort asc");
+    }
+
+    @Test(expectedExceptions = NullPointerException.class)
+    public void applyUrlQueryNullStringUrl() throws Exception {
+        PageRequest request = new PageRequest(0, 10, "sort asc");
+
+        request.applyUrlQuery((String) null);
+    }
+
+    @Test
+    public void applyUrlQueryStringUrl() throws Exception {
+        PageRequest request = new PageRequest(0, 10, "sort asc");
+
+        UriComponents result = request.applyUrlQuery("http://localhost").build();
+
+        MultiValueMap<String, String> parameters = result.getQueryParams();
+
+        Assert.assertEquals(parameters.size(), 3);
+        Assert.assertEquals(parameters.get("page").size(), 1);
+        Assert.assertEquals(parameters.get("per_page").size(), 1);
+        Assert.assertEquals(parameters.get("sort").size(), 1);
+
+        Assert.assertEquals(parameters.getFirst("page"), "0");
+        Assert.assertEquals(parameters.getFirst("per_page"), "10");
+        Assert.assertEquals(parameters.getFirst("sort"), "sort asc");
+    }
+
+    @Test(expectedExceptions = NullPointerException.class)
+    public void applyUrlQueryNullBuilder() throws Exception {
+        PageRequest request = new PageRequest(0, 10, "sort asc");
+
+        request.applyUrlQuery((UriComponentsBuilder) null);
+    }
+
+    @Test
+    public void applyUrlQueryBuilder() throws Exception {
+        PageRequest request = new PageRequest(0, 10, "sort asc");
+
+        UriComponents result = request.applyUrlQuery(UriComponentsBuilder.fromUriString("http://localhost")).build();
+
+        MultiValueMap<String, String> parameters = result.getQueryParams();
+
+        Assert.assertEquals(parameters.size(), 3);
+        Assert.assertEquals(parameters.get("page").size(), 1);
+        Assert.assertEquals(parameters.get("per_page").size(), 1);
+        Assert.assertEquals(parameters.get("sort").size(), 1);
+
+        Assert.assertEquals(parameters.getFirst("page"), "0");
+        Assert.assertEquals(parameters.getFirst("per_page"), "10");
+        Assert.assertEquals(parameters.getFirst("sort"), "sort asc");
     }
 
     @Test
