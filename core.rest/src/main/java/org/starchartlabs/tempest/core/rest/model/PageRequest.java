@@ -20,9 +20,8 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 
 import org.springframework.web.util.UriComponentsBuilder;
-
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Preconditions;
+import org.starchartlabs.alloy.core.MoreObjects;
+import org.starchartlabs.alloy.core.Preconditions;
 
 /**
  * Represents query parameters provided on a web resource that supports bounding of a variable number of available

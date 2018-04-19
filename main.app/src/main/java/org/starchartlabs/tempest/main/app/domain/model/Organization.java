@@ -20,7 +20,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import com.google.common.base.MoreObjects;
+import org.starchartlabs.alloy.core.MoreObjects;
 
 /**
  * Represents a group of users who manage and contribute to a common goal. Serves as a name-space for projects and other

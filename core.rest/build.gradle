@@ -2,9 +2,9 @@
 dependencies {
 	compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind'
 	compile group: 'com.google.code.findbugs', name: 'jsr305'
-	compile group: 'com.google.guava', name: 'guava'
 	compile group: 'org.slf4j', name: 'slf4j-api'
 	compile group: 'org.springframework', name: 'spring-web'
+	compile group: 'org.starchartlabs.alloy', name: 'alloy-core'
     
     testCompile group: 'com.google.code.gson', name: 'gson'
     testCompile group: 'org.mockito', name: 'mockito-core'

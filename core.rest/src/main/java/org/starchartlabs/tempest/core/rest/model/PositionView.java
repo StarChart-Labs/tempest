@@ -19,11 +19,13 @@ import java.util.Objects;
 
 import javax.annotation.Nullable;
 
+import org.starchartlabs.alloy.core.MoreObjects;
+import org.starchartlabs.alloy.core.Preconditions;
+import org.starchartlabs.alloy.core.Strings;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Preconditions;
 
 /**
  * Represents page navigation links and position data based on the current location in a paginated data series
@@ -90,12 +92,12 @@ public class PositionView {
         Objects.requireNonNull(baseUrl);
 
         Preconditions.checkArgument(elementsInPage >= 0,
-                "There cannot be less that 0 elements in the page (Input: " + elementsInPage + ")");
+                () -> Strings.format("There cannot be less that 0 elements in the page (Input: %s)", elementsInPage));
         Preconditions.checkArgument(totalElements >= 0,
-                "There cannot be less that 0 total elements (Input: " + totalElements + ")");
+                () -> Strings.format("There cannot be less that 0 total elements (Input: %s)", totalElements));
         Preconditions.checkArgument(elementsInPage <= totalElements,
-                "There cannot be more elements in the page than total elements (Input: " + elementsInPage + ", "
-                        + totalElements + ")");
+                () -> Strings.format("There cannot be more elements in the page than total elements (Input: %s, %s)",
+                        elementsInPage, totalElements));
 
         int elementsInPreviousPages = request.getPageNumber() * request.getPerPage();
         int maxPage = Math.max((totalElements / request.getPerPage()) - 1, 0);

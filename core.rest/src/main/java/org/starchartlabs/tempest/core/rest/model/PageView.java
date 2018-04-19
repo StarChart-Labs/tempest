@@ -20,8 +20,9 @@ import java.util.Objects;
 
 import javax.annotation.Nullable;
 
+import org.starchartlabs.alloy.core.MoreObjects;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.MoreObjects;
 
 /**
  * Represents a bounded sub-set of available results, including information about the location of the bounded results
