@@ -21,7 +21,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import com.google.common.base.MoreObjects;
+import org.starchartlabs.alloy.core.MoreObjects;
 
 /**
  * Represents an actionable step towards a larger aim. Often associated/generated from a less specific {@link Idea}

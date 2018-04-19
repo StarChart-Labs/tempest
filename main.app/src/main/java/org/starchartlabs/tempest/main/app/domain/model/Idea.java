@@ -20,7 +20,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import com.google.common.base.MoreObjects;
+import org.starchartlabs.alloy.core.MoreObjects;
 
 /**
  * Represents a vague plan or intention which requires further refinement before action can be taken to acheive it

@@ -20,7 +20,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import com.google.common.base.MoreObjects;
+import org.starchartlabs.alloy.core.MoreObjects;
 
 /**
  * Represents a group of related ideas and goals focuses on a specific purpose

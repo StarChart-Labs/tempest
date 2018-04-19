@@ -25,11 +25,11 @@ import java.util.stream.Stream;
 import javax.annotation.Nullable;
 
 import org.springframework.http.HttpMethod;
+import org.starchartlabs.alloy.core.MoreObjects;
+import org.starchartlabs.alloy.core.Preconditions;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.google.common.base.MoreObjects;
-import com.google.common.base.Preconditions;
 
 /**
  * Represents meta-data associated with a representation which presents information on the location, allowed operations,

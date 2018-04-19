@@ -19,9 +19,10 @@ import java.util.Objects;
 
 import javax.annotation.Nullable;
 
+import org.starchartlabs.alloy.core.MoreObjects;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.google.common.base.MoreObjects;
 
 /**
  * Represents a link to a resource associated with another representation

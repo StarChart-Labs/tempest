@@ -20,7 +20,7 @@ import java.util.UUID;
 
 import javax.annotation.Nullable;
 
-import com.google.common.base.MoreObjects;
+import org.starchartlabs.alloy.core.MoreObjects;
 
 /**
  * Represents an individual who interacts with the application
