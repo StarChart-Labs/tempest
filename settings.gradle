@@ -1,2 +1,4 @@
+rootProject.name = 'tempest'
+
 include 'main.app'
 include 'core.rest'
